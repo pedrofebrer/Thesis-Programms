@@ -16,6 +16,6 @@ function Rho = RhoVGSumFormula(C, G, M, S, K, r ,q, tau, n1, m1, k1)
     % Rho - Rho measure matrix of the European Call Option driven by the Variance Gamma process
     
     D = DeltaVGSumFormula(C, G, M, S, K, r ,q, tau,  n1, m1,k1);                                % D is defined as the two dimensional matrix of the delta measure values for an European Call option driven by the Variance Gamma
-    [COP,POP,lo,mu] = EuropeanOptionSumFormula(C, G, M, S, K, r ,q, tau,  n1, m1,k1);           % COP is defined as the two dimensional matrix of the European Call option price driven by the Variance Gamma
+    [COP,POP,lo,mu] = VarianceGammaSumFormula(C, G, M, S, K, r ,q, tau,  n1, m1,k1);           % COP is defined as the two dimensional matrix of the European Call option price driven by the Variance Gamma
     Rho = -tau*COP + tau*S*D;                                                                   % Rho is defined as the two dimensional matrix of the rho measure values for an European Call option driven by the Variance Gamma
 end

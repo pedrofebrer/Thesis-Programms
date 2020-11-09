@@ -73,7 +73,7 @@ k=6;
 
 
 % Gamma measure for the Black-Scholes model computation:
-[DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholesGreeks(K, S, r, q, tau, sig);
+[CallBS, PutBS, DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholes(S, K, r, q, tau, sig);
 
 % Gamma measure for the Variance Gamma formula computation:
 len = length(S);
@@ -120,7 +120,7 @@ k=7;
 
 
 % Rho measure for the Black-Scholes model computation:
-[DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholesGreeks(K, S, r, q, tau, sig);
+[CallBS, PutBS, DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholes(S, K, r, q, tau, sig);
 
 % Rho measure for the Variance Gamma formula computation:
 len = length(S);
@@ -170,7 +170,7 @@ p=10000;
 
 
 % Theta measure for the Black-Scholes model computation:
-[DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholesGreeks(K, S, r, q, tau, sig);
+[CallBS, PutBS, DeltaBS, GammaBS, RhoBS, ThetaBS] = BlackScholes(S, K, r, q, tau, sig);
 
 % Theta measure for the Variance Gamma formula computation:
 len = length(S);

@@ -47,7 +47,7 @@ K =[975;
 n=30;
 
 % Double sum series computaion computation:
-[CEC, CAC, CC, COPT] = ConvergenceVGSum(C, G, M, S, K, r, q, tau, n);
+[CEC, CAC, CC, COPT] = ConvergenceVGSum(C, G, M, S0, K, r, q, tau, n);
 
 % Values of the double sum series when n = 10 and 0 <= m , k <= 10:
 fprintf('Values of the double sum series when n = 10 and 0 <= m , k <= 10:')

@@ -33,7 +33,7 @@ k=11;
 CVGF = zeros(1,length(S));
 PVGF = zeros(1,length(S));
 for s =1:length(S)
-    [COP,POP,lo,mu] = EuropeanOptionSumFormula(C, G, M, S(s), K, r ,q, tau, n, m,k);
+    [COP,POP,lo,mu] = VarianceGammaSumFormula(C, G, M, S(s), K, r ,q, tau, n, m,k);
     CVGF(s) = COP;
     PVGF(s) = POP;
 end
@@ -96,14 +96,14 @@ ite = 10000;
 Data = [173.30 157.00 133.10 114.80 97.60 81.20 66.90 58.90 53.90 42.50 33.00 24.90 18.30 13.20];
 
 % Call Option prices for the Variace Gamma formula computation:
-[CC1,PP1,lo,mu] = EuropeanOptionSumFormula(C, G, M, S0, K1, r ,q, tau, n, m,k);
+[CC1,PP1,lo,mu] = VarianceGammaSumFormula(C, G, M, S0, K1, r ,q, tau, n, m, k);
 CVGF = CC1';
 
 % Call Option prices for the Black-Scholes model computation:
 [CBS, PBS, Delta, Gamma, Rho, Theta] = BlackScholes(S0, K, r, q, tau, sig);
 
 % Call Option prices for the Variace Gamma Monte Carlo simulation:
-CC2 = CallOptionVGRevenge(C, G, M, S0, K, r ,q, tau, dt, ite);
+CC2 = CallOptionMonteCarlo(C, G, M, S0, K, r ,q, tau, dt, ite);
 CVGMC = CC2';
 
 

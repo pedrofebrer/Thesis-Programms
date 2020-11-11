@@ -12,7 +12,7 @@ r = 0.019;
 q = 0.012;
 
 % Time to Maturity:
-tau= [(30 - 18)/365, (7-6)/12+ (30 - 18)/365, (7-3)/12+ (30 - 18)/365, (7)/12+ (30 - 18)/365, (7+3)/12+ (30 - 18)/365, (7+6)/12+ (30 - 18)/365, (7+12)/12+ (30 - 18)/365];
+tau=[4*7/365  9*7/365  22*7/365  35*7/365  48*7/365  61*7/365  87*7/365];
 
 % Strike Prices:
 K =[975;
@@ -54,5 +54,5 @@ fprintf('Values of the double sum series when n = 10 and 0 <= m , k <= 10:')
 CC(:,:,11,1)
 
 % Conversion of the three Double sum series, for the euclidean norm:
-fprintf('Conversion of the three Double sum series, for the euclidean norm:')
+fprintf('Conversion of the three double sum series, for the euclidean norm:')
 CEC

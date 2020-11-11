@@ -12,7 +12,7 @@ M = 14.2699;
 % General Parameters:
 S = 500:5:2000;
 K = 1025;
-tau = 7/12 + (30 - 18)/365;
+tau=35*7/365;
 r = 0.019;
 q = 0.012;
 
@@ -20,9 +20,9 @@ q = 0.012;
 sig = 0.1812;
 
 % Parameters for the Variance Gamma Formula:
-n=38;
-m=27;
-k=8;
+n=32;
+m=19;
+k=6;
 
 
 % Delta measure for the Black-Scholes model computation:
@@ -59,7 +59,7 @@ M = 14.2699;
 % General Parameters:
 S = 500:5:2000;
 K = 1025;
-tau = 7/12+ (30 - 18)/365;
+tau=35*7/365;
 r = 0.019;
 q = 0.012;
 
@@ -67,9 +67,9 @@ q = 0.012;
 sig = 0.1812;
 
 % Parameters for the Variance Gamma Formula:
-n=33;
-m=25;
-k=6;
+n=38;
+m=27;
+k=7;
 
 
 % Gamma measure for the Black-Scholes model computation:
@@ -106,7 +106,7 @@ M = 14.2699;
 % General Parameters:
 S = 500:5:2000;
 K = 1025;
-tau = 7/12+ (30 - 18)/365;
+tau=35*7/365;
 r = 0.019;
 q = 0.012;
 
@@ -114,9 +114,9 @@ q = 0.012;
 sig = 0.1812;
 
 % Parameters for the Variance Gamma Formula:
-n=34;
-m=19;
-k=7;
+n=38;
+m=27;
+k=8;
 
 
 % Rho measure for the Black-Scholes model computation:
@@ -153,7 +153,7 @@ M = 14.2699;
 % General Parameters
 S = 500:5:1500;
 K = 1025;
-tau = 7/12 + (30 - 18)/365;
+tau=35*7/365;
 r = 0.019;
 q = 0.012;
 
@@ -161,12 +161,12 @@ q = 0.012;
 sig = 0.1812;
 
 % Parameters for the Variance Gamma formula:
-n=34;
-m=19;
+n=38;
+m=27;
 k=7;
 
 % Parameter for the Digamma function
-p=10000;
+p=20000;
 
 
 % Theta measure for the Black-Scholes model computation:
@@ -176,6 +176,7 @@ p=10000;
 len = length(S);
 TT = zeros(len,1);
 for j = 1:len
+    S(j)
     Theta = ThetaVGSumFormula(C, G, M, S(j), K, r ,q, tau,  n, m, k, p);
     TT(j) = Theta;
 end

@@ -13,8 +13,10 @@ function err = RMSE(Res,X)
     
     for i = 1:v(1)
         for j = 1:v(2)
-            if(Res(i,j) ~= 0)
-                s = s + (Res(i,j)-X (i,j))^2;   % s is increased by the square value of the difference of the (i,j)-elements of matrices Res and X
+            if(Res(i,j) == 0)
+                
+            else
+                s = s + (Res(i,j)-X(i,j))^2;   % s is increased by the square value of the difference of the (i,j)-elements of matrices Res and X
                 n=n+1;
             end
         end

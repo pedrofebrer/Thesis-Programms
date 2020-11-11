@@ -14,15 +14,15 @@ S = 500:5:4000;
 K = 1110;
 r = 0.019;
 q = 0.012;
-tau = 7/12 + (30 - 18)/365;
+tau=35*7/365;
 
 % Volatility:
 sig = 0.1812;
 
 % Parameters for the Variance Gamma Formula:
-n=58;
-m=31;
-k=11;
+n=54;
+m=27;
+k=9;
 
 
 % Call and Put Option prices for the Black-Scholes model computation:
@@ -33,7 +33,7 @@ k=11;
 CVGF = zeros(1,length(S));
 PVGF = zeros(1,length(S));
 for s =1:length(S)
-    [COP,POP,lo,mu] = VarianceGammaSumFormula(C, G, M, S(s), K, r ,q, tau, n, m,k);
+    [COP,POP,lo,mu] = VarianceGammaSumFormula(C, G, M, S(s), K, r ,q, tau, n, m, k);
     CVGF(s) = COP;
     PVGF(s) = POP;
 end
@@ -71,7 +71,7 @@ M = 14.2699;
 
 % General Parameters:
 S0 = 1124.47;
-tau = 7/12 + (30 - 18)/365;
+tau=35*7/365;
 r = 0.019;
 q = 0.012;
 
@@ -84,8 +84,8 @@ K1 = K';
 sig = 0.1812;
 
 % Parameters for the Variance Gamma Formula:
-n=21;
-m=24;
+n=22;
+m=27;
 k=7;
 
 % Parameters for the Monte Carlo Simulation:
